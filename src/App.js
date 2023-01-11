@@ -6,7 +6,7 @@ import WeatherListComponent from './components/WeatherListComponent';
 
 function App() {
   const [weathers, setWeeathers] =
-    useState(
+    useState([
       {
         location: {
           name: 'London',
@@ -63,9 +63,9 @@ function App() {
             code: 1000,
           },
         },
-      }
-    );
-  console.log(weathers);
+      },
+    ]);
+  console.log(weathers[0]);
   const date = new Date();
 
   return (
@@ -75,10 +75,12 @@ function App() {
           date={date}
         />
         <SearchComponent
-          name={weathers.location.name}
+          name={
+            weathers[0].location.name
+          }
         />
         <WeatherListComponent
-          weathers={{ weathers }}
+          weathers={weathers}
         />
       </div>
     </div>

@@ -2,24 +2,35 @@ import React from 'react';
 import '../styles/WeatherComponent.css';
 import WeatherComponent from './WeatherComponent';
 
-const WeatherListComponent = ({
-  weathers,
-}) => {
-  console.log(weathers.weathers);
+const WeatherListComponent = (
+  weathers
+) => {
+  console.log(weathers);
   return (
     <div>
       <h1>
         {
-          weathers.weathers.location
+          weathers.weathers[0].location
             .name
         }
       </h1>
       <div className="weather_container">
-        {weathers.map((weather) => (
-          <WeatherComponent
-            weather={weather}
-          />
-        ))}
+        {weathers.weathers.map(
+          (weather) => (
+            <WeatherComponent
+              key={
+                weather.current.is_day
+              }
+              temp={
+                weather.current.temp_c
+              }
+              text={
+                weather.current
+                  .condition.text
+              }
+            />
+          )
+        )}
       </div>
     </div>
   );

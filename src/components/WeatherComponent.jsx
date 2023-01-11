@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/WeatherComponent.css';
 
-const WeatherComponent = (weather) => {
-  console.log(weather);
+const WeatherComponent = (props) => {
+  console.log(props);
   return (
     <div>
       <div className="weather">
@@ -12,15 +12,9 @@ const WeatherComponent = (weather) => {
           alt="sun"
         ></img>
         <p className="temp">
-          {weather.current.temp_c +
-            ' °C'}{' '}
+          {props.temp + ' °C'}{' '}
         </p>
-        <p>
-          {
-            weather.current.condition
-              .text
-          }
-        </p>
+        <p>{props.text}</p>
       </div>
     </div>
   );
