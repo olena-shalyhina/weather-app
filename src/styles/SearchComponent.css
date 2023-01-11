@@ -1,0 +1,35 @@
+.search_group {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.search_group input {
+  min-width: 150px;
+  height: 38px;
+  border: 3px solid rgb(237, 218, 71);
+  border-radius: 5px;
+  outline: 1px solid slateblue;
+  padding-left: 15px;
+  background-color: rgb(224, 244, 244);
+  color: rgb(40, 52, 75);
+  font-size: medium;
+}
+
+.search_group button {
+  line-height: 24px;
+  padding: 5px;
+  margin-left: 5px;
+  background-color: rgb(40, 52, 75);
+  color: rgb(237, 218, 71);
+  border: 3px solid rgb(237, 218, 71);
+  border-radius: 5px;
+}
+
+.search_group button:hover {
+  box-shadow: 1px 2px 3px
+      rgb(226, 222, 233),
+    2px 3px 5px rgb(237, 218, 71),
+    3px 5px 10px rgb(20, 76, 119);
+}
