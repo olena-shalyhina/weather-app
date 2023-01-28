@@ -24,7 +24,7 @@ const DateTodayComponent = (props) => {
   // ];
   return (
     <div className="date_today">
-      {day} {month} {year}
+      {year} {month} {day}
     </div>
   );
 };

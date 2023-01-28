@@ -1,17 +1,19 @@
 .search_group {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 50px;
+  width: 100%;
   margin-top: 20px;
 }
 
 .search_group input {
-  min-width: 150px;
+  min-width: 180px;
   height: 38px;
   border: 3px solid rgb(237, 218, 71);
   border-radius: 5px;
   outline: 1px solid slateblue;
-  padding-left: 15px;
+  padding-left: 5px;
   background-color: rgb(224, 244, 244);
   color: rgb(40, 52, 75);
   font-size: medium;
