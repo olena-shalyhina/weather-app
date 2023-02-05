@@ -12,15 +12,21 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(114, 179, 228);
+  /* background-color: rgb(114, 179, 228); */
+  background-color: rgb(119, 136, 177);
   color: rgb(40, 52, 75);
   margin: 10px;
   font-weight: 500;
-  border: 3px solid rgb(237, 218, 71);
+  /* border: 3px solid rgb(237, 218, 71); */
+  border: 3px solid rgb(237, 143, 71);
   border-radius: 16px;
   box-shadow: 1px 2px 3px
       rgb(226, 222, 233),
     2px 3px 5px rgb(237, 218, 71),
+    3px 5px 10px rgb(20, 76, 119);
+  box-shadow: 1px 2px 3px
+      rgb(162, 153, 177),
+    2px 3px 5px rgb(237, 140, 71),
     3px 5px 10px rgb(20, 76, 119);
 }
 

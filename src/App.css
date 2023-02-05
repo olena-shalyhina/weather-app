@@ -3,19 +3,24 @@
 }
 body {
   text-align: center;
-  background-color: rgb(98, 173, 231);
+  /* background-color: rgb(98, 173, 231); */
+  background-color: rgb(131, 131, 193);
   height: 100vh;
 }
 
 .wrapper {
   height: 80%;
   width: 90%;
-  background-image: url('../public/33.png');
+  /* background-image: url('../public/33.png'); */
+  background-image: url('https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80');
+  /* background-image: url('https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-image: url('https://images.unsplash.com/photo-1496450681664-3df85efbd29f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'); */
   background-size: cover;
   margin: auto;
   margin-top: 15px;
   padding: 20px;
-  border: 3px solid rgb(237, 218, 71);
+  /* border: 3px solid rgb(237, 218, 71); */
+  border: 3px solid rgb(237, 143, 71);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
