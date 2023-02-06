@@ -10,9 +10,8 @@ const WeatherItemComponent = (
       <div className="weather">
         <p>{props.date}</p>
         <img
-          // src="113.png"
           src={props.icon}
-          alt="picture"
+          alt="weather icon"
           title={props.text}
         ></img>
         <p className="temp">

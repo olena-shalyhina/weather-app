@@ -4,12 +4,15 @@ import { getWeatherData } from '../API/WeatherService';
 import { useEffect } from 'react';
 
 const SearchComponent = ({
-  // name,
-  // fatchWeathers,
   setWeathers,
 }) => {
-  const [city, setCity] =
-    useState('Tallinn');
+  const [city, setCity] = useState(
+    'TALLINN'
+    // 'Tallinn'.toUpperCase()
+  );
+
+  const [cityName, setCityName] =
+    useState('');
 
   useEffect(() => {
     fetchWeathers();
@@ -19,17 +22,24 @@ const SearchComponent = ({
   async function fetchWeathers() {
     const weathers =
       await getWeatherData(city);
-    setWeathers(weathers);
+    setWeathers(
+      weathers.forecast.forecastday
+    );
+    setCityName(
+      weathers.location.name.toUpperCase()
+    );
+    setCity('');
   }
 
-  console.log(city);
   return (
     <div>
       <div className="search_group">
         <input
           placeholder="Enter City..."
           onChange={(event) => {
-            setCity(event.target.value);
+            setCity(
+              event.target.value.toUpperCase()
+            );
           }}
           value={city}
         ></input>
@@ -37,7 +47,7 @@ const SearchComponent = ({
           Search
         </button>
       </div>
-      <h1>{city}</h1>
+      <h1>{cityName}</h1>
     </div>
   );
   // if (name !== { city }) {

@@ -11,6 +11,7 @@ export async function getWeatherData(
     `${api.base}forecast.json?key=${api.key}&q=${city}&days=3`
   );
   console.log(response.data);
-  return response.data.forecast
-    .forecastday;
+  // return response.data.forecast
+  //   .forecastday;
+  return response.data;
 }

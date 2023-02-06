@@ -4,9 +4,7 @@ import WeatherItemComponent from './WeatherItemComponent';
 
 const WeatherListComponent = ({
   weathers,
-  name,
 }) => {
-  console.log(weathers);
   return (
     <div>
       <div className="weather_container">
