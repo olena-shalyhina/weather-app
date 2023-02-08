@@ -3,7 +3,7 @@ import '../styles/LoaderComponent.css';
 
 const LoaderComponent = () => {
   return (
-    <div class="lds-spinner">
+    <div className="loader">
       <div></div>
       <div></div>
       <div></div>

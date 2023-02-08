@@ -12,6 +12,12 @@ const SearchComponent = ({
     useState('TALLINN');
   const [cityName, setCityName] =
     useState('');
+
+  useEffect(() => {
+    fetchWeathers();
+    console.log(city);
+  }, []);
+
   const [
     fetchWeathers,
     isWeathersLoading,
@@ -26,11 +32,6 @@ const SearchComponent = ({
       weathers.location.name.toUpperCase()
     );
   });
-
-  useEffect(() => {
-    fetchWeathers();
-    console.log(city);
-  }, []);
 
   // async function fetchWeathers() {
   //   const weathers =
