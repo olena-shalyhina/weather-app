@@ -32,7 +32,7 @@ const SearchComponent = ({
       weathers.location.name.toUpperCase()
     );
   });
-
+  console.log(weatherError);
   // async function fetchWeathers() {
   //   const weathers =
   //     await getWeatherData(city);
@@ -44,7 +44,7 @@ const SearchComponent = ({
   //   );
   // }
 
-  const handlerClick = () => {
+  const handleClick = () => {
     fetchWeathers();
     setCity('');
   };
@@ -53,17 +53,32 @@ const SearchComponent = ({
     <div>
       <div className="search_group">
         <input
+          type="text"
           placeholder="Enter City..."
+          maxLength={20}
           onChange={(event) => {
             setCity(
-              event.target.value.toUpperCase()
+              event.target.value
+                .replace(
+                  /[^A-Za-zА-Яа-яЁё\`]/gi,
+                  ''
+                )
+                .toUpperCase()
             );
           }}
           value={city}
         ></input>
-        <button onClick={handlerClick}>
+        <button onClick={handleClick}>
           Search
         </button>
+      </div>
+      <div className="warning">
+        {weatherError && (
+          <p>
+            Сity not found, please try
+            again
+          </p>
+        )}
       </div>
       {isWeathersLoading ? (
         <LoaderComponent />
@@ -75,17 +90,3 @@ const SearchComponent = ({
 };
 
 export default SearchComponent;
-
-// if (name !== { city }) {
-//   return (
-//     <h1
-//       style={{
-//         textAlign: 'center',
-//         color: 'teal',
-//       }}
-//     >
-//       Город не найден
-//     </h1>
-//   );
-// }
-// };

@@ -35,3 +35,16 @@
     2px 3px 5px rgb(237, 218, 71),
     3px 5px 10px rgb(20, 76, 119);
 }
+
+.warning p {
+  position: absolute;
+  width: 270px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgb(39, 7, 62);
+  background-color: rgb(104, 226, 114);
+  background-color: rgb(235, 222, 126);
+  border-radius: 5px;
+  z-index: 100;
+}
