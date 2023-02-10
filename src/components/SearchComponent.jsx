@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/SearchComponent.css';
-import { getWeatherData } from '../API/WeatherService';
+import { getWeatherData } from '../API/weatherService';
 import { useEffect } from 'react';
 import { useFetching } from '../hooks/useFetching';
 import LoaderComponent from './LoaderComponent';
@@ -32,17 +32,6 @@ const SearchComponent = ({
       weathers.location.name.toUpperCase()
     );
   });
-  console.log(weatherError);
-  // async function fetchWeathers() {
-  //   const weathers =
-  //     await getWeatherData(city);
-  //   setWeathers(
-  //     weathers.forecast.forecastday
-  //   );
-  //   setCityName(
-  //     weathers.location.name.toUpperCase()
-  //   );
-  // }
 
   const handleClick = () => {
     fetchWeathers();
@@ -60,7 +49,7 @@ const SearchComponent = ({
             setCity(
               event.target.value
                 .replace(
-                  /[^A-Za-zА-Яа-яЁё\`]/gi,
+                  /[^A-Za-zА-Яа-яЁё/`/-]/gi,
                   ''
                 )
                 .toUpperCase()

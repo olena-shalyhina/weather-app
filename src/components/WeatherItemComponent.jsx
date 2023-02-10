@@ -4,7 +4,6 @@ import '../styles/WeatherComponent.css';
 const WeatherItemComponent = (
   props
 ) => {
-  console.log(props);
   return (
     <div>
       <div className="weather">

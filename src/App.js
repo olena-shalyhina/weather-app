@@ -10,20 +10,6 @@ function App() {
 
   const date = new Date();
 
-  // async function fetchWeathers(city) {
-  //   const weathers =
-  //     await getWeatherData(city);
-  //   setWeathers(weathers);
-
-  // console.log(weathers);
-  // console.log(weathers.location.name);
-  // console.log(
-  //   weathers.forecast.forecastday[0]
-  //     .day.maxtemp_c
-  // );
-
-  console.log(weathers);
-
   return (
     <div className="App">
       <div className="wrapper">
