@@ -15,13 +15,6 @@ const DateTodayComponent = (props) => {
 
   let year = props.date.getFullYear();
 
-  // const [month, day, year] = [
-  //   date.toLocaleString('en', {
-  //     month: 'long',
-  //   }),
-  //   date.getDate(),
-  //   date.getFullYear(),
-  // ];
   return (
     <div className="date_today">
       {year} {month} {day}

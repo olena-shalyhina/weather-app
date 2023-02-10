@@ -4,19 +4,16 @@
 body {
   text-align: center;
   background-color: rgb(131, 131, 193);
-  height: 100vh;
 }
 
 .wrapper {
-  height: 80%;
-  width: 90%;
+  width: 95vw;
   background-color: rgb(131, 131, 193);
   background-image: url('https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80');
   background-size: cover;
   margin: auto;
-  /* margin-top: 15px; */
-  vertical-align: middle;
-  padding: 20px;
+  margin-top: 20px;
+  padding: 30px;
   border: 3px solid rgb(238, 228, 20);
   border-radius: 16px;
   display: flex;
