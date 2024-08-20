@@ -1,37 +1,26 @@
 import React, { useState } from 'react';
 import '../styles/SearchComponent.css';
-import { getWeatherData } from '../API/weatherService';
+import { getWeatherData } from '../API/WeatherService';
 import { useEffect } from 'react';
 import { useFetching } from '../hooks/useFetching';
 import LoaderComponent from './LoaderComponent';
 
-const SearchComponent = ({
-  setWeathers,
-}) => {
-  const [city, setCity] =
-    useState('TALLINN');
-  const [cityName, setCityName] =
-    useState('');
+const SearchComponent = ({ setWeathers }) => {
+  const [city, setCity] = useState('TALLINN');
+  const [cityName, setCityName] = useState('');
 
   useEffect(() => {
     fetchWeathers();
     console.log(city);
   }, []);
 
-  const [
-    fetchWeathers,
-    isWeathersLoading,
-    weatherError,
-  ] = useFetching(async () => {
-    const weathers =
-      await getWeatherData(city);
-    setWeathers(
-      weathers.forecast.forecastday
-    );
-    setCityName(
-      weathers.location.name.toUpperCase()
-    );
-  });
+  const [fetchWeathers, isWeathersLoading, weatherError] = useFetching(
+    async () => {
+      const weathers = await getWeatherData(city);
+      setWeathers(weathers.forecast.forecastday);
+      setCityName(weathers.location.name.toUpperCase());
+    },
+  );
 
   const handleClick = () => {
     fetchWeathers();
@@ -48,32 +37,18 @@ const SearchComponent = ({
           onChange={(event) => {
             setCity(
               event.target.value
-                .replace(
-                  /[^A-Za-zА-Яа-яЁё/`/-]/gi,
-                  ''
-                )
-                .toUpperCase()
+                .replace(/[^A-Za-zА-Яа-яЁё/`/-]/gi, '')
+                .toUpperCase(),
             );
           }}
           value={city}
         ></input>
-        <button onClick={handleClick}>
-          Search
-        </button>
+        <button onClick={handleClick}>Search</button>
       </div>
       <div className="warning">
-        {weatherError && (
-          <p>
-            Сity not found, please try
-            again
-          </p>
-        )}
+        {weatherError && <p>Сity not found, please try again</p>}
       </div>
-      {isWeathersLoading ? (
-        <LoaderComponent />
-      ) : (
-        <h1>{cityName}</h1>
-      )}
+      {isWeathersLoading ? <LoaderComponent /> : <h1>{cityName}</h1>}
     </div>
   );
 };

@@ -6,32 +6,27 @@
 }
 .weather {
   height: 240px;
-  width: 150px;
+  width: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(119, 136, 177);
+  background-color: rgb(124, 151, 202);
   color: rgb(40, 52, 75);
   margin: 10px;
   font-weight: 500;
   border: 3px solid rgb(238, 228, 20);
   border-radius: 16px;
-  box-shadow: 1px 2px 3px
-      rgb(226, 222, 233),
-    2px 3px 5px rgb(238, 228, 20),
+  box-shadow: 1px 2px 3px rgb(226, 222, 233), 2px 3px 5px rgb(238, 228, 20),
     3px 5px 10px rgb(20, 76, 119);
-  box-shadow: 1px 2px 3px
-      rgb(162, 153, 177),
-    2px 3px 5px rgb(238, 228, 20),
+  box-shadow: 1px 2px 3px rgb(162, 153, 177), 2px 3px 5px rgb(238, 228, 20),
     3px 5px 10px rgb(20, 76, 119);
 }
 
 h1 {
   color: rgb(40, 52, 75);
   text-transform: uppercase;
-  text-shadow: 1px 2px 3px white,
-    2px 3px 5px rgb(238, 228, 20);
+  text-shadow: 1px 2px 3px white, 2px 3px 5px rgb(238, 228, 20);
 }
 
 img {
@@ -41,17 +36,39 @@ p span {
   font-size: 0.5em;
   text-shadow: none;
   padding: 5px;
+  letter-spacing: 1.3px;
 }
 .temp {
   font-size: 28px;
   font-weight: 500;
   line-height: 0;
-  text-shadow: 1px 2px 1px
-      rgb(234, 223, 79),
-    2px 3px rgb(117, 154, 200);
+  text-shadow: 1px 2px 1px rgb(234, 223, 79), 2px 3px rgb(117, 154, 200);
 }
 
 .text {
   padding: 0 5px;
   word-break: keep-all;
+}
+
+@media (min-width: 320px) and (max-width: 620px) {
+  .weather_container {
+    height: 60vh;
+  }
+  .weather {
+    width: 280px;
+    height: 70%;
+    flex-direction: row;
+  }
+  .temp {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .date {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 60px;
+  }
 }
