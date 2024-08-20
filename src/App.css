@@ -7,15 +7,13 @@ body {
 }
 
 .wrapper {
-  width: 100%;
-  min-height: 98vh;
+  max-width: 100%;
+  min-height: 100vh;
   background-color: rgb(131, 131, 193);
   background-image: url('https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80');
   background-size: cover;
-  margin: auto;
+  margin: 0 auto;
   padding: 30px;
-  border: 3px solid rgb(238, 228, 20);
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
