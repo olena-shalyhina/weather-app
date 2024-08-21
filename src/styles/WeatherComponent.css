@@ -56,7 +56,7 @@ p span {
   }
   .weather {
     width: 280px;
-    height: 15vh;
+    height: 115px;
     flex-direction: row;
   }
   .temp {
