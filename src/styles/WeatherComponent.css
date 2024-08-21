@@ -51,9 +51,6 @@ p span {
 }
 
 @media (min-width: 320px) and (max-width: 620px) {
-  .weather_container {
-    height: 60vh;
-  }
   .weather {
     width: 280px;
     height: 115px;
