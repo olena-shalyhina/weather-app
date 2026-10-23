@@ -3,20 +3,183 @@
 }
 body {
   text-align: center;
-  background-color: rgb(106, 138, 196);
+  background-color: #15243a;
 }
 
 .wrapper {
   max-width: 100%;
-  height: 100%;
   min-height: 100vh;
-  background-color: rgb(131, 131, 193);
-  background-image: url('https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80');
+  background-color: #24334a;
+  background-image:
+    linear-gradient(rgba(9, 19, 35, 0.38), rgba(9, 19, 35, 0.72)),
+    var(--background-image, url('./images/optimized/bg7.webp'));
   background-size: cover;
+  background-position: center;
   margin: 0 auto;
-  padding: 30px;
+  padding: 38px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 14px;
+}
+
+.background-picker {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 2;
+}
+
+.background-picker__trigger {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 0;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.background-picker__trigger svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.background-picker__trigger:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.background-picker__backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 12, 23, 0.68);
+  backdrop-filter: blur(5px);
+}
+
+.background-picker__dialog {
+  width: min(100%, 680px);
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  border: 1px solid rgba(31, 48, 68, 0.12);
+  border-radius: 18px;
+  padding: 18px;
+  color: #24334a;
+  background: #f1f4f7;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.background-picker__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.background-picker__heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.background-picker__close {
+  border: 0;
+  padding: 4px 8px;
+  color: #536274;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.background-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
+}
+
+.background-picker__option {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 0;
+  color: #24334a;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.background-picker__option[aria-pressed='true'] {
+  border-color: #0a9d65;
+  box-shadow: 0 0 1cqmin 2px rgba(6, 32, 22, 0.28);
+}
+
+.background-picker__option img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.background-picker__option span {
+  display: block;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.wrapper > div:not(.background-picker) {
+  width: min(100%, 1080px);
+}
+
+@media (max-width: 620px) and (max-height: 700px) {
+  .wrapper {
+    padding: 20px 16px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .background-picker {
+    top: 12px;
+    right: 12px;
+  }
+
+  .background-picker__dialog {
+    padding: 14px;
+  }
+
+  .background-picker__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-height: 500px) {
+  .background-picker__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .background-picker__option img {
+    aspect-ratio: 2.5 / 1;
+  }
+
+  .background-picker__option span {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .background-picker__heading {
+    margin-bottom: 8px;
+  }
 }

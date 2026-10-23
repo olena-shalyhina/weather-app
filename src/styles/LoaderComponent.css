@@ -1,9 +1,9 @@
 .loader {
-  color: official;
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
+  margin: 8px 0;
 }
 .loader div {
   transform-origin: 40px 40px;
@@ -19,7 +19,7 @@
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #f0e738;
+  background: #c7ddff;
 }
 .loader div:nth-child(1) {
   transform: rotate(0deg);

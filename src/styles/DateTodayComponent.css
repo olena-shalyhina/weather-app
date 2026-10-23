@@ -1,6 +1,8 @@
 .date_today {
   min-width: 200px;
-  font-size: 30px;
-  font-weight: 500;
-  color: rgb(226, 205, 16);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

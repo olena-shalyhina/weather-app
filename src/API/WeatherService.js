@@ -13,8 +13,16 @@ export async function getWeatherData(
       `REACT_APP_API_BASE_${env}`
     ];
 
+  if (!key || !base) {
+    throw new Error(
+      'Weather API is not configured. Add the API key and base URL to .env.',
+    );
+  }
+
   const response = await axios.get(
-    `${base}forecast.json?key=${key}&q=${city}&days=3`
+    `${base}forecast.json?key=${encodeURIComponent(
+      key,
+    )}&q=${encodeURIComponent(city.trim())}&days=3`,
   );
   return response.data;
 }

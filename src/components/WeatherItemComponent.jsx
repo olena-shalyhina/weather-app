@@ -2,21 +2,31 @@ import React from 'react';
 import '../styles/WeatherComponent.css';
 
 const WeatherItemComponent = (props) => {
+  const date = new Date(`${props.date}T00:00:00`);
+  const isToday = date.toDateString() === new Date().toDateString();
+  const dateLabel = isToday
+    ? 'Today'
+    : date.toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+      });
+
   return (
     <div>
       <div className="weather">
         <div>
-          <p className="date">{props.date}</p>
-          <img src={props.icon} alt="weather icon" title={props.text}></img>
+          <p className="date">{dateLabel}</p>
+          <img src={props.icon} alt={props.text} title={props.text}></img>
         </div>
-        <div>
-          <p className="temp">
-            <span>{'min '}</span>
-            {props.tempmin + ' °C'}
+        <div className="temperatures">
+          <p className="temp temp_high">
+            <span>High</span>
+            {props.tempmax}°
           </p>
-          <p className="temp">
-            <span>{'max '}</span>
-            {props.tempmax + ' °C'}
+          <p className="temp temp_low">
+            <span>Low</span>
+            {props.tempmin}°
           </p>
         </div>
       </div>

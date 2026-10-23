@@ -19,34 +19,43 @@ const SearchComponent = ({ setWeathers }) => {
       const weathers = await getWeatherData(city);
       setWeathers(weathers.forecast.forecastday);
       setCityName(weathers.location.name.toUpperCase());
+      setCity('');
     },
   );
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     fetchWeathers();
-    setCity('');
   };
 
   return (
     <div>
-      <div className="search_group">
+      <form className="search_group" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Enter City..."
+          placeholder="Search city..."
+          aria-label="City name"
           maxLength={20}
           onChange={(event) => {
             setCity(
               event.target.value
-                .replace(/[^A-Za-zА-Яа-яЁё/`/-]/gi, '')
+                .replace(/[^A-Za-zА-Яа-яЁё\s'-]/gi, '')
                 .toUpperCase(),
             );
           }}
           value={city}
-        ></input>
-        <button onClick={handleClick}>Search</button>
-      </div>
+        />
+        <button type="submit" aria-label="Search" title="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.3" />
+            <path d="m15.5 15.5 4.2 4.2" />
+          </svg>
+        </button>
+      </form>
       <div className="warning">
-        {weatherError && <p>Сity not found, please try again</p>}
+        {weatherError && (
+          <p>Не удалось загрузить погоду. Проверьте название города и настройки API.</p>
+        )}
       </div>
       {isWeathersLoading ? <LoaderComponent /> : <h1>{cityName}</h1>}
     </div>
