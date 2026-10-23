@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.3f015636.css",
-    "main.js": "./static/js/main.ad37183d.js",
-    "static/media/bg7.webp": "./static/media/bg7.4bb30587bbae168bff7e.webp",
-    "static/media/bg5.webp": "./static/media/bg5.b99132024522793af686.webp",
-    "static/media/bg4.webp": "./static/media/bg4.90fc4c9428fcb9801e3d.webp",
-    "static/media/bg2.webp": "./static/media/bg2.7dc9d5f3b3a1387a1665.webp",
-    "static/media/bg3.webp": "./static/media/bg3.90e936e3fc1c82c7702d.webp",
-    "static/media/bg1.webp": "./static/media/bg1.1630f15fa0e48177d2b0.webp",
-    "static/media/bg8.webp": "./static/media/bg8.4ca8d556d86e47303ddf.webp",
-    "static/media/bg6.webp": "./static/media/bg6.5a41384c20cd565e7927.webp",
-    "index.html": "./index.html",
-    "main.3f015636.css.map": "./static/css/main.3f015636.css.map",
-    "main.ad37183d.js.map": "./static/js/main.ad37183d.js.map"
+    "main.css": "/weather-app/static/css/main.96b3edbf.css",
+    "main.js": "/weather-app/static/js/main.061b4415.js",
+    "static/media/bg7.webp": "/weather-app/static/media/bg7.4bb30587bbae168bff7e.webp",
+    "static/media/bg5.webp": "/weather-app/static/media/bg5.b99132024522793af686.webp",
+    "static/media/bg4.webp": "/weather-app/static/media/bg4.90fc4c9428fcb9801e3d.webp",
+    "static/media/bg2.webp": "/weather-app/static/media/bg2.7dc9d5f3b3a1387a1665.webp",
+    "static/media/bg3.webp": "/weather-app/static/media/bg3.90e936e3fc1c82c7702d.webp",
+    "static/media/bg1.webp": "/weather-app/static/media/bg1.1630f15fa0e48177d2b0.webp",
+    "static/media/bg8.webp": "/weather-app/static/media/bg8.4ca8d556d86e47303ddf.webp",
+    "static/media/bg6.webp": "/weather-app/static/media/bg6.5a41384c20cd565e7927.webp",
+    "index.html": "/weather-app/index.html",
+    "main.96b3edbf.css.map": "/weather-app/static/css/main.96b3edbf.css.map",
+    "main.061b4415.js.map": "/weather-app/static/js/main.061b4415.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f015636.css",
-    "static/js/main.ad37183d.js"
+    "static/css/main.96b3edbf.css",
+    "static/js/main.061b4415.js"
   ]
 }
