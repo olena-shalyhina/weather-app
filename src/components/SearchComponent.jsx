@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import '../styles/SearchComponent.css';
 import { getWeatherData } from '../API/WeatherService';
-import { useEffect } from 'react';
 import { useFetching } from '../hooks/useFetching';
 import LoaderComponent from './LoaderComponent';
 
@@ -9,23 +8,25 @@ const SearchComponent = ({ setWeathers }) => {
   const [city, setCity] = useState('TALLINN');
   const [cityName, setCityName] = useState('');
 
-  useEffect(() => {
-    fetchWeathers();
-    console.log(city);
-  }, []);
-
-  const [fetchWeathers, isWeathersLoading, weatherError] = useFetching(
-    async () => {
-      const weathers = await getWeatherData(city);
+  const loadWeathers = useCallback(
+    async (cityToSearch) => {
+      const weathers = await getWeatherData(cityToSearch);
       setWeathers(weathers.forecast.forecastday);
       setCityName(weathers.location.name.toUpperCase());
       setCity('');
     },
+    [setWeathers]
   );
+  const [fetchWeathers, isWeathersLoading, weatherError] =
+    useFetching(loadWeathers);
+
+  useEffect(() => {
+    fetchWeathers('TALLINN');
+  }, [fetchWeathers]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetchWeathers();
+    fetchWeathers(city);
   };
 
   return (
