@@ -157,3 +157,74 @@ h1 {
     height: 60px;
   }
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  h1 {
+    margin: 8px 0;
+    font-size: 20px;
+  }
+
+  .weather_container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .weather_container > div {
+    flex: 0 1 160px;
+    min-width: 0;
+  }
+
+  .weather {
+    width: 100%;
+    height: 130px;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    margin: 0;
+    padding: 6px 8px;
+  }
+
+  .weather > div:first-child {
+    display: contents;
+  }
+
+  .date {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .weather img {
+    grid-column: 1;
+    grid-row: 2;
+    width: 56px;
+    height: 56px;
+  }
+
+  .temperatures {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .temp,
+  .temp_low,
+  .temp_high {
+    font-size: 15px;
+  }
+
+  .temp span {
+    font-size: 8px;
+  }
+}

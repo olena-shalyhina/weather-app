@@ -92,3 +92,21 @@
     margin-top: 8px;
   }
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .search_group {
+    height: 40px;
+    margin-top: 6px;
+    padding: 3px;
+  }
+
+  .search_group button {
+    flex-basis: 32px;
+    height: 32px;
+  }
+
+  .search_group button svg {
+    width: 16px;
+    height: 16px;
+  }
+}

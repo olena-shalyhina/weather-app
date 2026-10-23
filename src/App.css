@@ -183,3 +183,16 @@ body {
     margin-bottom: 8px;
   }
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .wrapper {
+    min-height: 100vh;
+    padding: 38px 12px 10px;
+    gap: 10px;
+  }
+
+  .background-picker {
+    top: 6px;
+    right: 8px;
+  }
+}
